@@ -72,7 +72,7 @@ io.on("connection", socket => {
         io.in(code).emit("newRound", resetRound(code))
     })
 
-    socket.on("disconnect", () => {//
+    socket.on("disconnect", () => {
         const res = removePlayer(socket.id)
         if (res.code !== -1) {
             if (res.status !== "ending") {
