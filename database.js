@@ -127,7 +127,7 @@ const findWinners = code => {
         if (value === max) {
             const index2 = games[index].players.findIndex(player => player.id === key)
             games[index].players[index2].score++
-            if (games[index].players[index2].score === 1) {
+            if (games[index].players[index2].score === 5) {
                 games[index].winners.push(games[index].players[index2].name)
             }
             games[index].scorers.push(games[index].players[index2].name)
