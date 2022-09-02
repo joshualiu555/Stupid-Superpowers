@@ -1,0 +1,361 @@
+/*Lobby*/
+
+.Lobby {
+    background-image: url("../images/lobby-background.png");
+    background-size: 100% 100%;
+}
+
+.LobbyBox {
+    width: 75%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    color: white;
+}
+
+.LobbyUserCount:after {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    animation: ellipsis steps(4, end) 2s infinite;
+    content: "\2026";
+    width: 0;
+}
+
+@keyframes ellipsis {
+    to {
+        width: 1.25em;
+    }
+}
+
+.LobbyPlayerList {
+    font-weight: bold;
+}
+
+.LobbyDisclaimer {
+    color: red;
+}
+
+/*Start Game*/
+
+.Start {
+    overflow: auto;
+    height: 100vh;
+    background-image: url("../images/start-background.png");
+    background-size: 100% 100%;
+}
+
+.StartMessage {
+    color: white;
+}
+
+.StartCountdown {
+    color: white;
+    font-size: 2rem;
+}
+
+/*Play Powers*/
+
+.Playing {
+    background-image: url("../images/playing-background.png");
+    background-size: 100% 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.PlayingLayout {
+    width: 90%;
+    height: 90vh;
+    display: grid;
+    background: white;
+    margin: auto;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 75%;
+    grid-template-areas:
+        "countdown situation game-info"
+        "player-list powers chat"
+    ;
+    border: 3px solid black;
+}
+
+.PlayingLayout > div {
+    border: 3px solid black;
+}
+
+.PlayingCountdown {
+    grid-area: countdown;
+    text-align: center;
+    font-size: 7vh;
+}
+
+.PlayingSituation {
+    grid-area: situation;
+    text-align: center;
+    font-size: 3vh;
+    overflow: scroll;
+}
+
+.PlayingGameInfo {
+    grid-area: game-info;
+    text-align: center;
+    font-size: 2.5vh;
+}
+
+.PlayingPlayerList {
+    grid-area: player-list;
+}
+
+.PlayingPlayerList > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.PlayingPlayerList > ul > li {
+    font-size: 3vh;
+    padding: 2%;
+}
+
+.PlayingPlayerList li:nth-child(odd){
+    background-color: lightgray;
+}
+
+.PlayingPowers {
+    grid-area: powers;
+    text-align: center;
+}
+
+.PlayingPowers > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.PlayingPowers > ul > li {
+    font-size: 2.5vh;
+    padding: 2%;
+}
+
+.PlayingPowers li:nth-child(odd){
+    background-color: lightgray;
+}
+
+.PlayingPowers > ul > li:hover {
+    cursor: pointer;
+}
+
+.PlayingPowers > button {
+    margin-top: 5vh;
+    border: 3px solid black;
+    font-size: 2vw;
+}
+
+.PlayingPowers > button:hover {
+    cursor: pointer;
+}
+
+.PlayingPowers > button:active {
+    background: red;
+}
+
+.PlayingChat {
+    grid-area: chat;
+}
+
+.PlayingChat .MessageList {
+    height: 50vh;
+    overflow: scroll;
+}
+
+.PlayingChat .YourMessage > input {
+    display: block;
+    border: 3px solid black;
+}
+
+.PlayingChat .YourMessage > button {
+    border: 3px solid black;
+}
+
+/*Voting*/
+
+.Voting {
+    background-image: url("../images/voting-background.png");
+    background-size: 100% 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.VotingLayout {
+    width: 90%;
+    height: 90vh;
+    display: grid;
+    background: white;
+    margin: auto;
+    grid-template-columns: 25% 50% 25%;
+    grid-template-rows: 25% 75%;
+    grid-template-areas:
+        "countdown situation game-info"
+        "player-list powers chat"
+;
+    border: 3px solid black;
+}
+
+.VotingLayout > div {
+    border: 3px solid black;
+}
+
+.VotingCountdown {
+    grid-area: countdown;
+    text-align: center;
+    font-size: 7vh;
+}
+
+.VotingSituation {
+    grid-area: situation;
+    text-align: center;
+    font-size: 3vh;
+    overflow: scroll;
+}
+
+.VotingGameInfo {
+    grid-area: game-info;
+    text-align: center;
+    font-size: 2.5vh;
+}
+
+.VotingPlayerList {
+    grid-area: player-list;
+}
+
+.VotingPlayerList > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.VotingPlayerList > ul > li {
+    font-size: 3vh;
+    padding: 2%;
+}
+
+.VotingPlayerList li:nth-child(odd){
+    background-color: lightgray;
+}
+
+.VotingPowers {
+    grid-area: powers;
+    text-align: center;
+}
+
+.VotingPowers > p {
+    font-size: 3vh;
+}
+
+.VotingPowers > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.VotingPowers > ul > li {
+    font-size: 2.5vh;
+    padding: 2%;
+}
+
+.VotingPowers li:nth-child(odd){
+    background-color: lightgray;
+}
+
+.VotingPowers > ul > li:hover {
+    cursor: pointer;
+}
+
+.VotingPowers > button {
+    margin-top: 5vh;
+    border: 3px solid black;
+    font-size: 2vw;
+}
+
+.VotingPowers > button:hover {
+    cursor: pointer;
+}
+
+.VotingPowers > button:active {
+    background: red;
+}
+
+.VotingChat {
+    grid-area: chat;
+}
+
+.VotingChat .MessageList {
+    height: 50vh;
+    overflow: scroll;
+}
+
+.VotingChat .YourMessage > input {
+    display: block;
+    border: 3px solid black;
+}
+
+.VotingChat .YourMessage > button {
+    border: 3px solid black;
+}
+
+/*Scoring*/
+
+.Scoring {
+    background-image: url("../images/scoring-background.png");
+    background-size: 100% 100%;
+}
+
+.ScoringBox {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid red;
+    color: black;
+    font-weight: bold;
+    overflow: auto;
+}
+
+.ScoringCountdown {
+    font-size: 5vh;
+}
+
+/*Winning*/
+
+.Winning {
+    background-image: url("../images/winning-background.png");
+    background-size: 100% 100%;
+}
+
+.WinningBox {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid red;
+    color: black;
+    font-weight: bold;
+    overflow: auto;
+}
+
+/*Disconnecting*/
+
+.Disconnecting {
+    background-image: url("../images/disconnected-background.png");
+    background-size: 100% 100%;
+    height: 100vh;
+}
+
+.DisconnectingBox {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
