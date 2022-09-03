@@ -11,7 +11,7 @@ function Game({socket, name, code, color, visibility}) {
     const [players, setPlayers] = useState([])
     const [round, setRound] = useState("lobby")
     const [situations, setSituations] = useState([])
-    const [situationIndex, setSituationIndex] = useState(-1)
+    const [situationIndex, setSituationIndex] = useState(0)
     const [power, setPower] = useState(-1)
     const [submittedPower, setSubmittedPower] = useState(false)
     const [vote, setVote] = useState(-1)
@@ -23,8 +23,8 @@ function Game({socket, name, code, color, visibility}) {
         socket.emit("addPlayer", {code: code, name: name, id: socket.id})
         socket.on("addedPlayer", data => {
             setPlayers(data.players)
-            setSituations(data.situations)
             if (data.players.length === 4) {
+                setSituations(data.situations)
                 restartCountdown(5)
                 setRound("start")
             }
@@ -46,7 +46,6 @@ function Game({socket, name, code, color, visibility}) {
                 restartCountdown(10)
                 setRound("scoring")
                 setScorers(data.scorers)
-
             }
         })
         socket.on("newRound", newPlayers => {
@@ -57,7 +56,9 @@ function Game({socket, name, code, color, visibility}) {
             setSubmittedVote(false)
             setScorers([])
             setWinners([])
-            startPlaying()
+            setSituationIndex(prevState => prevState + 1)
+            setRound("playing")
+            restartCountdown(30)
         })
         socket.on("winner", data => {
             setRound("winning")
@@ -88,9 +89,8 @@ function Game({socket, name, code, color, visibility}) {
     }
 
     const startPlaying = () => {
-        restartCountdown(30)
         setRound("playing")
-        setSituationIndex(situationIndex + 1)
+        restartCountdown(30)
     }
 
     const submitPower = () => {
@@ -159,7 +159,6 @@ function Game({socket, name, code, color, visibility}) {
                         onComplete={startPlaying}
                     />
                 </div>
-
             </div>
         )
     } else if (round === "playing") {
@@ -184,7 +183,7 @@ function Game({socket, name, code, color, visibility}) {
                     </div>
                     <div className={"PlayingPlayerList"}>
                         <ul>
-                            {players.map((player, index) => <li key={index}>{player.name} {player.name === name ? "(You)" : ""}: {player.score}</li>)}
+                            {players.map((player, index) => <li key={index}>{player.name} {player.name === name ? "(You)" : ""}: {player.score} {player.power !== -1 && "\u2713"}</li>)}
                         </ul>
                     </div>
                     <div className={"PlayingPowers"}>
@@ -223,11 +222,10 @@ function Game({socket, name, code, color, visibility}) {
                     </div>
                     <div className={"VotingPlayerList"}>
                         <ul>
-                            {players.map((player, index) => <li key={index}>{player.name} {player.name === name ? "(You)" : ""}: {player.score}</li>)}
+                            {players.map((player, index) => <li key={index}>{player.name} {player.name === name ? "(You)" : ""}: {player.score} {player.vote !== -1 && "\u2713"}</li>)}
                         </ul>
                     </div>
                     <div className={"VotingPowers"}>
-                        <p>Your Power: {players[findPlayer()].cards[power]}</p>
                         <ul>
                             {players.map((player, index) =>
                                 (player.id !== socket.id) ?
@@ -255,8 +253,7 @@ function Game({socket, name, code, color, visibility}) {
                             onComplete={resetRound}
                         />
                     </div>
-                    <h1>You: {name}</h1>
-                    <h2>Winners</h2>
+                    <h2>Scorers</h2>
                     <ul>
                         {scorers.map((winner, index) => <li key={index}>{winner}</li>)}
                     </ul>
