@@ -318,7 +318,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid red;
     color: black;
     font-weight: bold;
     overflow: auto;
@@ -340,7 +339,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid red;
     color: black;
     font-weight: bold;
     overflow: auto;
