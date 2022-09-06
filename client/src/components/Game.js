@@ -20,10 +20,6 @@ function Game({socket, name, code, color, visibility}) {
     const [winners, setWinners] = useState([])
 
     useEffect(() => {
-        const perfEntries = performance.getEntriesByType("navigation");
-        if (perfEntries[0].type === "back_forward") {
-            window.location.reload();
-        }
         socket.emit("addPlayer", {code: code, name: name, id: socket.id})
         socket.on("addedPlayer", data => {
             setPlayers(data.players)
