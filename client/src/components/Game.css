@@ -13,6 +13,7 @@
     align-items: center;
     margin: auto;
     color: white;
+    overflow: scroll;
 }
 
 .LobbyUserCount:after {
@@ -22,6 +23,11 @@
     animation: ellipsis steps(4, end) 2s infinite;
     content: "\2026";
     width: 0;
+}
+
+.Lobby > .Chat {
+    width: 30%;
+    height: 30vh;
 }
 
 @keyframes ellipsis {
@@ -165,20 +171,6 @@
     grid-area: chat;
 }
 
-.PlayingChat .MessageList {
-    height: 50vh;
-    overflow: scroll;
-}
-
-.PlayingChat .YourMessage > input {
-    display: block;
-    border: 3px solid black;
-}
-
-.VotingChat .YourMessage > button {
-    border: 3px solid black;
-}
-
 /*Voting*/
 
 .Voting {
@@ -292,20 +284,6 @@
     grid-area: chat;
 }
 
-.VotingChat .MessageList {
-    height: 50vh;
-    overflow: scroll;
-}
-
-.VotingChat .YourMessage > input {
-    display: block;
-    border: 3px solid black;
-}
-
-.VotingChat .YourMessage > button {
-    border: 3px solid black;
-}
-
 /*Scoring*/
 
 .Scoring {
@@ -327,6 +305,11 @@
     font-size: 5vh;
 }
 
+.Scoring > .Chat {
+    width: 30%;
+    height: 30vh;
+}
+
 /*Winning*/
 
 .Winning {
@@ -344,6 +327,11 @@
     overflow: auto;
 }
 
+.Winning > .Chat {
+    width: 30%;
+    height: 30vh;
+}
+
 /*Disconnecting*/
 
 .Disconnecting {
@@ -356,4 +344,24 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+/*Chat*/
+
+.MessageList {
+    height: 50vh;
+    overflow: scroll;
+}
+
+.YourMessage > input {
+    display: block;
+    border: 3px solid black;
+}
+
+.YourMessage > button {
+    border: 3px solid black;
+}
+
+.YourMessage > button:hover {
+    cursor: pointer;
 }
