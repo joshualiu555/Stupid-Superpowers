@@ -294,11 +294,7 @@
     color: black;
     font-weight: bold;
     overflow: auto;
-    list-style-type: none;
-}
-
-.ScoringBox li::before {
-  content: "\1F4A9"; 
+    list-style: "\1F4A9";
 }
 
 .ScoringCountdown {
@@ -320,11 +316,6 @@
     color: black;
     font-weight: bold;
     overflow: auto;
-    list-style-type: none;
-}
-
-.WinningBox li::before {
-  content: "\1F4A9"; 
 }
 
 /*Disconnecting*/
