@@ -296,6 +296,10 @@
     overflow: auto;
 }
 
+.ScoringBox li::before {
+  content: "\1F4A9"; 
+}
+
 .ScoringCountdown {
     font-size: 5vh;
 }
@@ -315,6 +319,10 @@
     color: black;
     font-weight: bold;
     overflow: auto;
+}
+
+.WinningBox li::before {
+  content: "\1F4A9"; 
 }
 
 /*Disconnecting*/
