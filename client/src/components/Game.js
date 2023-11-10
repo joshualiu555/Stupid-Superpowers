@@ -278,7 +278,7 @@ function Game({socket, name, code, color, visibility}) {
         return (
             <div className={"Disconnecting"}>
                 <div className={"DisconnectingBox"}>
-                    <p>Too many players have disconnected. Please refresh to go back to the homepage</p>
+                    <p>There are less than 4 players. The game has ended. Please refresh to go back to the homepage</p>
                 </div>
             </div>
         )
