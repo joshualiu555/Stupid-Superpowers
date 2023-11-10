@@ -297,7 +297,7 @@
     list-style-type: none;
 }
 
-.ScoringBox li::marker {
+.ScoringBox li::before {
   content: "\1F4A9"; 
 }
 
@@ -323,7 +323,7 @@
     list-style-type: none;
 }
 
-.WinningBox li::marker {
+.WinningBox li::before {
   content: "\1F4A9"; 
 }
 
