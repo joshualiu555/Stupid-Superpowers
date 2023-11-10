@@ -147,7 +147,7 @@ function Game({socket, name, code, color, visibility}) {
                     </ul>
                     <p>Game Info: Code: {code}, Color: {color}, Visibility: {visibility}</p>
                     <p>If you're on a phone or tablet, tilt it to the side</p>
-                    <p>I was too lazy to code a disconnect button. Just refresh!</p>
+                    <p>Refresh to officially disconnect. DO NOT turn off your device or re-enter the address. This will disconnect you without you knowing.</p>
                     <p className={"LobbyDisclaimer"}>Disclaimer: If you are playing a yellow game, you may be exposed to inappropriate content. Please leave if you don't want to continue</p>
                     <Chat socket={socket} code={code} color={color} name={name}/>
                 </div>
