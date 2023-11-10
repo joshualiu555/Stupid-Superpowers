@@ -13,7 +13,7 @@
     align-items: center;
     margin: auto;
     color: white;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .LobbyUserCount:after {
