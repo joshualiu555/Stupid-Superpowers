@@ -8,7 +8,7 @@ initReactFastclick();
 const {uniqueNamesGenerator, adjectives, animals} = require("unique-names-generator")
 const filter = require("leo-profanity")
 
-const socket = io.connect("http://stupid-superpowers.herokuapp.com")
+const socket = io.connect("https://stupid-superpowers.herokuapp.com")
 
 function App() {
   const [name, setName] = useState("")
