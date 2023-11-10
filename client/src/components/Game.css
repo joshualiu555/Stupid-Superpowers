@@ -3,12 +3,6 @@
 .Lobby {
     background-image: url("../images/lobby-background.png");
     background-size: 100% 100%;
-    -ms-overflow-style: none;  
-    scrollbar-width: none;  
-}
-
-.Lobby::-webkit-scrollbar { 
-    display: none;
 }
 
 .LobbyBox {
