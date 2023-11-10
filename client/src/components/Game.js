@@ -149,7 +149,6 @@ function Game({socket, name, code, color, visibility}) {
                     <p>If you're on a phone or tablet, tilt it to the side</p>
                     <p>Refresh to officially disconnect. DO NOT turn off your device or re-enter the address. This will disconnect you without you knowing.</p>
                     <p className={"LobbyDisclaimer"}>Disclaimer: If you are playing a yellow game, you may be exposed to inappropriate content. Please leave if you don't want to continue</p>
-                    <Chat socket={socket} code={code} color={color} name={name}/>
                 </div>
             </div>
         )
@@ -270,7 +269,6 @@ function Game({socket, name, code, color, visibility}) {
                     <ul>
                         {players.map((player, index) => <li key={index}>{player.name}: {player.score}</li>)}
                     </ul>
-                    <Chat socket={socket} code={code} color={color} name={name}/>
                 </div>
             </div>
         )
@@ -298,7 +296,6 @@ function Game({socket, name, code, color, visibility}) {
                     <ul>
                         {winners.map((winner, index) => <li key={index}>{winner}</li>)}
                     </ul>
-                    <Chat socket={socket} code={code} color={color} name={name}/>
                     <h1>Please refresh to go back to the homepage. </h1>
                 </div>
             </div>
